@@ -1,13 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import Persons from './Persons'
 import PersonForm from './components/PersonForm'
 import FinderForm from './components/finderForm'
 const App = () => {
+  const [server, setServer] = useState([])
   const [ persons, setPersons ] = useState([]) 
   const [ newName, setNewName ] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [finder, setFinder] = useState('')
   const [showAll, setShowAll] = useState(true) 
+  const hook = () => {
+    axios
+      .get('http://localhost:3001/persons')
+      .then(response=>{
+        setPersons(response.data)
+      })
+  }
+  useEffect(hook,[])
   const addName = (event) => {
     event.preventDefault()
     const personObject = { name:newName, number: newNumber ,id:persons.length+1 } 
