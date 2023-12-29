@@ -1,0 +1,16 @@
+.notification{
+    color:green;
+    border:green 2px solid;
+    padding:15px;
+    text-align: center;
+    font-style: italic;
+    background-color: azure;
+}
+.error{
+    color:red;
+    border:red 2px solid;
+    padding:15px;
+    text-align: center;
+    font-style: italic;
+    background-color: rgb(255, 205, 205);
+}
