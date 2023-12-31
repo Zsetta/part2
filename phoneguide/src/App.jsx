@@ -22,7 +22,7 @@ const App = () => {
   useEffect(hook,[])
   const addName = (event) => {
     event.preventDefault()
-    const personObject = { name:newName, number: newNumber ,id:persons.length+1 } 
+    const personObject = { name:newName, number: newNumber  } 
     let toAdd = exist(personObject.name)
     toAdd 
       ? window.confirm('Already exists, update?')
